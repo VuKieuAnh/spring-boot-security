@@ -37,6 +37,7 @@ public class TaskController {
     public ModelAndView showFormCreate(){
         ModelAndView modelAndView = new ModelAndView("/task/create");
         modelAndView.addObject("task", new Task());
+        modelAndView.addObject("user", userService.getCurrentUser());
         return modelAndView;
     }
 
