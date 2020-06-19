@@ -15,4 +15,7 @@ public class Task {
     private String name;
 
     private String description;
+
+    @ManyToOne
+    private AppUser user;
 }

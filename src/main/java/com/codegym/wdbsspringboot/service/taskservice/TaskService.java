@@ -1,5 +1,6 @@
 package com.codegym.wdbsspringboot.service.taskservice;
 
+import com.codegym.wdbsspringboot.model.AppUser;
 import com.codegym.wdbsspringboot.model.Task;
 import com.codegym.wdbsspringboot.repository.ITaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,4 +33,10 @@ public class TaskService implements ITaskService{
     public void remove(Long id) {
         taskRepository.deleteById(id);
     }
+
+    @Override
+    public Iterable<Task> findAllByUser(AppUser user) {
+        return taskRepository.findAllByUser(user);
+    }
+
 }
